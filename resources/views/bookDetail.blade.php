@@ -15,6 +15,12 @@
             <h5>Publisher: {{$book->publisher->name}}</h5>
             <h5>Year: {{$book->year}}</h5>
             <h5>Synopsis: {{$book->synopsis}}</h5>
+            <h5>
+                Genre:
+                @foreach ($book->categories as $b)
+                    {{$b->name}},
+                @endforeach
+            </h5>
             </div>
         </div>
     </div>
