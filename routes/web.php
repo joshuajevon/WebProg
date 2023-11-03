@@ -20,4 +20,13 @@ use App\Http\Controllers\BookController;
 
 // best practice
 Route::get('/', [BookController::class, 'welcome'])->name('welcome');
+
+Route::get('/book/{id}', [BookController::class, 'bookById'])->name('bookById');
+
+Route::get('/category/{id}', [BookController::class, 'categoryById'])->name('categoryById');
+
+Route::get('/publisher', [BookController::class, 'publisher'])->name('publisher');
+
+Route::get('/contact', [BookController::class, 'contact'])->name('contact');
+
 // Route::{http method}('url', [Controller::class, 'nama func di controller']);

@@ -20,24 +20,28 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="/">Home</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Category
                     </a>
+                    {{-- @foreach ($categories as $cat) --}}
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li>
+                            {{-- <option value="">{{$cat->name}}</option> --}}
+                            <a class="dropdown-item" href="{{route('categoryById',1)}}">Romance</a>
+                            <a class="dropdown-item" href="{{route('categoryById',2)}}">Action</a>
+                            <a class="dropdown-item" href="{{route('categoryById',3)}}">Adventure</a>
+                        </li>
                     </ul>
+                    {{-- @endforeach --}}
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Publisher</a>
+                    <a class="nav-link" href="{{route('publisher')}}">Publisher</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{{route('contact')}}">Contact</a>
                   </li>
               </div>
             </div>
