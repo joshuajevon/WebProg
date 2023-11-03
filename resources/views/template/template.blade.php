@@ -26,16 +26,13 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Category
                     </a>
-                    {{-- @foreach ($categories as $cat) --}}
                     <ul class="dropdown-menu">
+                        @foreach ($categories as $cat)
                         <li>
-                            {{-- <option value="">{{$cat->name}}</option> --}}
-                            <a class="dropdown-item" href="{{route('categoryById',1)}}">Romance</a>
-                            <a class="dropdown-item" href="{{route('categoryById',2)}}">Action</a>
-                            <a class="dropdown-item" href="{{route('categoryById',3)}}">Adventure</a>
+                            <a class="dropdown-item" href="{{route('categoryById', $cat->id)}}">{{$cat->name}}</a>
                         </li>
+                        @endforeach
                     </ul>
-                    {{-- @endforeach --}}
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{{route('publisher')}}">Publisher</a>

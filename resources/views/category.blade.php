@@ -7,7 +7,7 @@
 
 @section('body')
 <div class="d-flex justify-content-center bg-secondary text-white">
-    <h1>Book ListCategory</h1>
+    <h1>{{$category}}</h1>
 </div>
 
 <div class="d-flex flex-row m-5 justify-content-center">

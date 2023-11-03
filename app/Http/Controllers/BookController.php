@@ -24,18 +24,22 @@ class BookController extends Controller
 
     public function categoryById($id)
     {
+        $categories = Category::all();
+        $category = Category::where('id','=',$id)->pluck('name')->first();
         $bookId = BookCategory::where('category_id','=',$id)->pluck('book_id');
         $bookCats = Book::findOrFail($bookId);
-        return view('category', compact('bookCats'));
+        return view('category', compact('bookCats','categories','category'));
     }
 
     public function publisher(){
         $publisher = Publisher::all();
-        return view('publisher', compact('publisher'));
+        $categories = Category::all();
+        return view('publisher', compact('publisher','categories'));
     }
 
     public function contact(){
-        return view('contact');
+        $categories = Category::all();
+        return view('contact',compact('categories'));
     }
 
 }
