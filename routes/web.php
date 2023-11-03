@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // best practice
-// Route::get('/',[ProductController::class, 'welcome'])->name('welcome');
+Route::get('/', [BookController::class, 'welcome'])->name('welcome');
 // Route::{http method}('url', [Controller::class, 'nama func di controller']);
