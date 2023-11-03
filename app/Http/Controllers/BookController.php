@@ -22,13 +22,11 @@ class BookController extends Controller
         return view('bookDetail', compact('book','categories'));
     }
 
-    public function categoryById($id){
-        $categories = Category::all();
-        $category = Category::where('id', '=', $id)->get();
-        $bookId = BookCategory::where('category_id','=',$category)->get('book_id');
+    public function categoryById($id)
+    {
+        $bookId = BookCategory::where('category_id','=',$id)->pluck('book_id');
         $bookCats = Book::findOrFail($bookId);
-        // Book::where('id', '=', $bookId);
-        return view('category', compact('bookCats','categories'));
+        return view('category', compact('bookCats'));
     }
 
     public function publisher(){
